@@ -1,0 +1,64 @@
+{
+  "__collections__": {
+    "countries": {
+      "RU": {
+        "__collections__": {
+          "companies": {
+            "11636c00-9db2-11eb-90b0-e16ef8d5e3d5": {
+              "uid": "11636c00-9db2-11eb-90b0-e16ef8d5e3d5",
+              "displayName": "Foxstrot",
+              "siteURL": "https://www.foxtrot.com.ua",
+              "photoURL": "https://www.foxtrot.com.ua/favicon.ico",
+              "category": "online_stores",
+              "keyName": [
+                "f",
+                "fo",
+                "fox",
+                "foxs",
+                "foxst",
+                "foxstr",
+                "foxstro",
+                "foxstrot"
+              ],
+              "keySite": [
+                "f",
+                "fo",
+                "fox",
+                "foxt",
+                "foxtr",
+                "foxtro",
+                "foxtrot",
+                "foxtrot.",
+                "foxtrot.c",
+                "foxtrot.co",
+                "foxtrot.com",
+                "foxtrot.com.",
+                "foxtrot.com.u",
+                "foxtrot.com.ua"
+              ],
+              "keyTranslit": [
+                "f",
+                "fo",
+                "fox",
+                "foxs",
+                "foxst",
+                "foxstr",
+                "foxstro",
+                "foxstrot"
+              ],
+              "phone": null,
+              "address": null,
+              "email": null,
+              "rating": {
+                "totalRating": null,
+                "numOfReviews": null
+              },
+              "lastUpdate": null,
+              "validUntil": null
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "8538d1c0-41b0-449e-95b8-d75cfbb8e400": {
+    "uid": "8538d1c0-41b0-449e-95b8-d75cfbb8e400",
+    "displayName": "Shell",
+    "photoURL": "http://shell.com/favicon.ico",
+    "category": "gas_station_petroleum",
+    "siteURL": "http://shell.com",
+    "phone": null,
+    "address": null,
+    "email": null,
+    "rating": {
+      "totalRating": null,
+      "numOfReviews": null
+    },
+    "validUntil": null,
+    "lastUpdate": null,
+    "keyName": [
+      "s",
+      "sh",
+      "she",
+      "shel",
+      "shell"
+    ],
+    "keySite": [
+      "s",
+      "sh",
+      "she",
+      "shel",
+      "shell",
+      "shell.",
+      "shell.c",
+      "shell.co",
+      "shell.com"
+    ],
+    "keyTranslit": []
+  },
+  "6a470152-ad1b-4343-8dd5-4f3693624181": {
+    "uid": "6a470152-ad1b-4343-8dd5-4f3693624181",
+    "displayName": "KPMG",
+    "photoURL": "http://home.kpmg/favicon.ico",
+    "category": "accounting_services",
+    "siteURL": "http://home.kpmg",
+    "phone": null,
+    "address": null,
+    "email": null,
+    "rating": {
+      "totalRating": null,
+      "numOfReviews": null
+    },
+    "validUntil": null,
+    "lastUpdate": null,
+    "keyName": [
+      "k",
+      "kp",
+      "kpm",
+      "kpmg"
+    ],
+    "keySite": [
+      "h",
+      "ho",
+      "hom",
+      "home",
+      "home.",
+      "home.k",
+      "home.kp",
+      "home.kpm",
+      "home.kpmg"
+    ],
+    "keyTranslit": []
+  },
+  "3598553f-32ef-4609-82c2-8aed0004043c": {
+    "uid": "3598553f-32ef-4609-82c2-8aed0004043c",
+    "displayName": "ERNST&Young",
+    "photoURL": "http://ey.com/favicon.ico",
+    "category": "accounting_services",
+    "siteURL": "http://ey.com",
+    "phone": null,
+    "address": null,
+    "email": null,
+    "rating": {
+      "totalRating": null,
+      "numOfReviews": null
+    },
+    "validUntil": null,
+    "lastUpdate": null,
+    "keyName": [
+      "e",
+      "er",
+      "ern",
+      "erns",
+      "ernst",
+      "ernst&",
+      "ernst&y",
+      "ernst&yo",
+      "ernst&you",
+      "ernst&youn",
+      "ernst&young"
+    ],
+    "keySite": [
+      "e",
+      "ey",
+      "ey.",
+      "ey.c",
+      "ey.co",
+      "ey.com"
+    ],
+    "keyTranslit": []
+  },
+  "fc80a4b2-620e-4191-a78b-a303f5206693": {
+    "uid": "fc80a4b2-620e-4191-a78b-a303f5206693",
+    "displayName": "PwC",
+    "photoURL": "http://pwc.com/favicon.ico",
+    "category": "accounting_services",
+    "siteURL": "http://pwc.com",
+    "phone": null,
+    "address": null,
+    "email": null,
+    "rating": {
+      "totalRating": null,
+      "numOfReviews": null
+    },
+    "validUntil": null,
+    "lastUpdate": null,
+    "keyName": [
+      "p",
+      "pw",
+      "pwc"
+    ],
+    "keySite": [
+      "p",
+      "pw",
+      "pwc",
+      "pwc.",
+      "pwc.c",
+      "pwc.co",
+      "pwc.com"
+    ],
+    "keyTranslit": []
+  },
+  "20f834bd-0755-4afc-922d-0fc30f82b819": {
+    "uid": "20f834bd-0755-4afc-922d-0fc30f82b819",
+    "displayName": "Deloitte",
+    "photoURL": "http://deloitte.com/favicon.ico",
+    "category": "accounting_services",
+    "siteURL": "http://deloitte.com",
+    "phone": null,
+    "address": null,
+    "email": null,
+    "rating": {
+      "totalRating": null,
+      "numOfReviews": null
+    },
+    "validUntil": null,
+    "lastUpdate": null,
+    "keyName": [
+      "d",
+      "de",
+      "del",
+      "delo",
+      "deloi",
+      "deloit",
+      "deloitt",
+      "deloitte"
+    ],
+    "keySite": [
+      "d",
+      "de",
+      "del",
+      "delo",
+      "deloi",
+      "deloit",
+      "deloitt",
+      "deloitte",
+      "deloitte.",
+      "deloitte.c",
+      "deloitte.co",
+      "deloitte.com"
+    ],
+    "keyTranslit": []
+  }
+}
