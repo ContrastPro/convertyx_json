@@ -1,5 +1,30 @@
+import 'dart:convert';
+import 'dart:io';
+
 import 'package:uuid/uuid.dart';
 import 'package:http/http.dart' as http;
+
+class Backup {
+  final File file;
+  final Map outputMap = {};
+
+  Backup({String fileName}) : file = File(fileName);
+
+  Future<void> doBackup(int index, int period) async {
+    if (index % period == 0) {
+      await file.writeAsString(
+        jsonEncode(outputMap),
+      );
+      print('*** BACKUP ***');
+    }
+  }
+
+  Future<void> finalRecord() async {
+    await file.writeAsString(
+      jsonEncode(outputMap),
+    );
+  }
+}
 
 class Uid {
   Uid._();
@@ -56,6 +81,18 @@ class Url {
     String url,
   }) {
     return "$url/favicon.ico";
+  }
+}
+
+class Category {
+  Category._();
+
+  static String encode({Map assetsCategory, String value}) {
+    return assetsCategory.keys.firstWhere((e) {
+      return assetsCategory[e] == value;
+    }, orElse: () {
+      return 'leisure';
+    });
   }
 }
 

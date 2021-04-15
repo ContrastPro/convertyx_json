@@ -13,6 +13,7 @@ class Progress {
   }
 
   void displayTotal() {
+    _stopwatch.stop();
     print('\n--- Import complete: 100% ---\n'
         'Total time: ${_stopwatch.elapsedMilliseconds / 1000} sec');
   }

@@ -1,14 +1,15 @@
-import 'dart:convert';
 import 'dart:io';
+import 'dart:convert';
 
 import 'decode/decode_classes.dart';
 import 'model/company.dart';
-import 'progress_indicator.dart';
+import 'progress/progress_indicator.dart';
 
 void main() async {
   final Progress progress = Progress();
-  final File file = File('bin/companies/output.json');
-  final Map outputMap = {};
+  final Backup backup = Backup(
+    fileName: 'bin/companies/output.json',
+  );
 
   // Читаем файлы со списка
   final List<String> sourceCategory = await File(
@@ -27,33 +28,35 @@ void main() async {
     'bin/companies/assets/category.json',
   ).readAsString());
 
-  for (int i = 0; i < 5; i++) {
+  for (int index = 0; index < 20; index++) {
+    // Do backups
+    await backup.doBackup(index, 10);
+
     String uid = Uid.getUid();
-    String siteURL = await Url.encode(url: sourceUrl[i]);
+    String siteURL = await Url.encode(url: sourceUrl[index]);
 
     // Create company object and convert to map
-    outputMap[uid] = Company(
+    backup.outputMap[uid] = Company(
       uid: uid,
-      displayName: sourceName[i],
+      displayName: sourceName[index],
       siteURL: siteURL,
       photoURL: Url.encodeFavicon(url: siteURL),
-      category: assetsCategory.keys.firstWhere((e) {
-        return assetsCategory[e] == sourceCategory[i];
-      }),
+      category: Category.encode(
+        assetsCategory: assetsCategory,
+        value: sourceCategory[index],
+      ),
       keyName: Search.encodeKey(
-        searchQuery: sourceName[i],
+        searchQuery: sourceName[index],
       ),
       keySite: Search.encodeKey(
-        searchQuery: sourceUrl[i],
+        searchQuery: sourceUrl[index],
       ),
       keyTranslit: [],
     ).toMap();
-    progress.display(i, sourceCategory.length);
+    progress.display(index, sourceCategory.length);
   }
 
   // Write to file
-  file.writeAsStringSync(
-    jsonEncode(outputMap),
-  );
+  await backup.finalRecord();
   progress.displayTotal();
 }
