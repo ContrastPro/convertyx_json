@@ -38,7 +38,7 @@ void main() async {
   int itemsLength = sourceCategory.length;
   for (int index = 0; index < itemsLength; index++) {
     // Do backups
-    await backup.doBackup(index, 5);
+    await backup.doBackup(index, 10);
 
     String uid = Uid.getUid();
     String siteURL = await Url.encode(url: sourceUrl[index]);
