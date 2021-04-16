@@ -1,30 +1,5 @@
-import 'dart:convert';
-import 'dart:io';
-
 import 'package:uuid/uuid.dart';
 import 'package:http/http.dart' as http;
-
-class Backup {
-  final File file;
-  final Map outputMap = {};
-
-  Backup({String fileName}) : file = File(fileName);
-
-  Future<void> doBackup(int index, int period) async {
-    if (index % period == 0) {
-      await file.writeAsString(
-        jsonEncode(outputMap),
-      );
-      print('*** BACKUP ***');
-    }
-  }
-
-  Future<void> finalRecord() async {
-    await file.writeAsString(
-      jsonEncode(outputMap),
-    );
-  }
-}
 
 class Uid {
   Uid._();
@@ -87,7 +62,10 @@ class Url {
 class Category {
   Category._();
 
-  static String encode({Map assetsCategory, String value}) {
+  static String encode({
+    Map assetsCategory,
+    String value,
+  }) {
     return assetsCategory.keys.firstWhere((e) {
       return assetsCategory[e] == value;
     }, orElse: () {
@@ -110,5 +88,24 @@ class Search {
       searchKey.add(key);
     }
     return searchKey;
+  }
+}
+
+class TranslitValidator {
+  static String encode({
+    Map assetsTranslit,
+    String text,
+  }) {
+    List<String> translit = [];
+    List<String> sourceSymbols = [];
+
+    sourceSymbols = text.split('');
+    sourceSymbols.forEach((String element) {
+      translit.add(assetsTranslit.containsKey(element)
+          ? assetsTranslit[element]
+          : element);
+    });
+
+    return translit.join();
   }
 }

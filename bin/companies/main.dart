@@ -1,17 +1,19 @@
 import 'dart:io';
 import 'dart:convert';
 
-import 'decode/decode_classes.dart';
+import 'service/backup.dart';
+import 'service/logger.dart';
+
+import 'encode/encode_classes.dart';
 import 'model/company.dart';
-import 'progress/progress_indicator.dart';
 
 void main() async {
-  final Progress progress = Progress();
+  final Logger progress = Logger();
   final Backup backup = Backup(
-    fileName: 'bin/companies/output.json',
+    fileName: 'bin/companies/output/output.json',
   );
 
-  // Читаем файлы со списка
+  // Читаем файлы для импорта
   final List<String> sourceCategory = await File(
     'bin/companies/source/category.txt',
   ).readAsLines();
@@ -24,13 +26,19 @@ void main() async {
     'bin/companies/source/site_url.txt',
   ).readAsLines();
 
+  // Читаем данные для сравнения и преобразования
   final Map assetsCategory = jsonDecode(await File(
     'bin/companies/assets/category.json',
   ).readAsString());
 
-  for (int index = 0; index < 20; index++) {
+  final Map assetsTranslit = jsonDecode(await File(
+    'bin/companies/assets/ru-EN.json',
+  ).readAsString());
+
+  int itemsLength = sourceCategory.length;
+  for (int index = 0; index < itemsLength; index++) {
     // Do backups
-    await backup.doBackup(index, 10);
+    await backup.doBackup(index, 5);
 
     String uid = Uid.getUid();
     String siteURL = await Url.encode(url: sourceUrl[index]);
@@ -51,9 +59,14 @@ void main() async {
       keySite: Search.encodeKey(
         searchQuery: sourceUrl[index],
       ),
-      keyTranslit: [],
+      keyTranslit: Search.encodeKey(
+        searchQuery: TranslitValidator.encode(
+          assetsTranslit: assetsTranslit,
+          text: sourceName[index],
+        ),
+      ),
     ).toMap();
-    progress.display(index, sourceCategory.length);
+    progress.display(index, itemsLength);
   }
 
   // Write to file
