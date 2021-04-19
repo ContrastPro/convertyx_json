@@ -15,13 +15,13 @@ class Url {
   static Future<String> encode({
     String url,
   }) async {
-    final Uri httpUri = Uri.http("$url", "/");
-    final Uri httpsUri = Uri.https("$url", "/");
+    final Uri httpUri = Uri.http('$url', '/');
+    final Uri httpsUri = Uri.https('$url', '/');
     // HTTP REQUEST
     try {
       http.Response httpResponse = await http.get(httpUri);
       if (httpResponse.statusCode == 200) {
-        return "http://$url";
+        return 'http://$url';
       }
     } catch (_) {}
 
@@ -29,33 +29,38 @@ class Url {
     try {
       http.Response httpsResponse = await http.get(httpsUri);
       if (httpsResponse.statusCode == 200) {
-        return "https://$url";
+        return 'https://$url';
       }
     } catch (_) {}
 
+    final Uri httpUriWWW = Uri.http('www.$url', '/');
+    final Uri httpsUriWWW = Uri.https('www.$url', '/');
+
     // HTTP REQUEST WITH WWW.
     try {
-      http.Response httpResponse = await http.get(httpUri);
+      http.Response httpResponse = await http.get(httpUriWWW);
       if (httpResponse.statusCode == 200) {
-        return "http://www.$url";
+        return 'http://www.$url';
       }
     } catch (_) {}
 
     // HTTPS REQUEST WITH WWW.
     try {
-      http.Response httpsResponse = await http.get(httpsUri);
+      http.Response httpsResponse = await http.get(httpsUriWWW);
       if (httpsResponse.statusCode == 200) {
-        return "https://www.$url";
+        return 'https://www.$url';
       }
     } catch (_) {}
 
-    return "http://$url";
+    return 'http://$url';
   }
 
   static String encodeFavicon({
     String url,
   }) {
-    return "$url/favicon.ico";
+    final List<String> splitUrl = url.split('://');
+    final String faviconUrl = 'http://www.google.com/s2/favicons?sz=16px&domain=';
+    return '$faviconUrl${splitUrl[1]}';
   }
 }
 
