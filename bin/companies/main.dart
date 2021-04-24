@@ -8,7 +8,7 @@ import 'encode/encode_classes.dart';
 import 'model/company.dart';
 
 void main() async {
-  await convertCompany();
+  //await convertCompany();
   await getForEachCountry();
 }
 

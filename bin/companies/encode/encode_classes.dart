@@ -59,7 +59,7 @@ class Url {
     String url,
   }) {
     final List<String> splitUrl = url.split('://');
-    final String faviconUrl = 'http://www.google.com/s2/favicons?sz=16px&domain=';
+    final String faviconUrl = 'http://www.google.com/s2/favicons?sz=32&domain=';
     return '$faviconUrl${splitUrl[1]}';
   }
 }
