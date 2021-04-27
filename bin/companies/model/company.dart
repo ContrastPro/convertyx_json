@@ -8,7 +8,6 @@ class Company {
   final List<String> keySite;
   final List<String> keyTranslit;
 
-
   Company({
     this.uid,
     this.displayName,
