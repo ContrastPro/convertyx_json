@@ -1,10 +1,7 @@
-import 'dart:io';
-import 'dart:convert';
+class InterfaceTranslate {
+  InterfaceTranslate._();
 
-void main() async {
-  final List<String> fileListOfStrings = await File('input.txt').readAsLines();
-
-  /*final Map<String, String> fields = {
+  static const Map<String, String> fields = {
     "favorites": "",
     "recent": "",
     "review": "",
@@ -16,9 +13,13 @@ void main() async {
     "job": "",
     "rating": "",
     "support": ""
-  };*/
+  };
+}
 
-  final Map<String, String> fields = {
+class CategoryTranslate {
+  CategoryTranslate._();
+
+  static const Map<String, String> fields = {
     "airlines": "",
     "auto_shops": "",
     "car_wash": "",
@@ -28,7 +29,6 @@ void main() async {
     "driving_schools": "",
     "real_estate_agency": "",
     "gambling": "",
-    "gas_station_petroleum": "",
     "accessories": "",
     "mountaineering": "",
     "pharmacy": "",
@@ -42,7 +42,7 @@ void main() async {
     "bars_pubs": "",
     "business": "",
     "charity": "",
-    "drilling_of_wells": "",
+    "drilling_of_the_wells": "",
     "accounting_services": "",
     "web_studios": "",
     "bicycles_motorcycles": "",
@@ -53,9 +53,7 @@ void main() async {
     "cargo_transportation": "",
     "doors": "",
     "kindergartens": "",
-    "children_products": "",
-    "children_centers": "",
-    "children_camp": "",
+    "childrens_products": "",
     "diagnostics": "",
     "interior_design": "",
     "notice_boards": "",
@@ -64,24 +62,17 @@ void main() async {
     "goods_delivery": "",
     "leisure": "",
     "factories_production": "",
-    "ticket_booking": "",
-    "earthworks": "",
     "pet_supplies": "",
     "games": "",
     "investments": "",
-    "engineering_companies": "",
     "foreign_languages": "",
     "internet_directories": "",
     "online_stores": "",
     "internet_service_providers": "",
-    "information_technology": "",
     "art": "",
-    "recruitment_agencies": "",
     "catering": "",
     "cinemas_theaters": "",
-    "clinics": "",
     "bookstores": "",
-    "coworking_spaces": "",
     "call_centers": "",
     "consulting": "",
     "cosmetics_perfumery": "",
@@ -92,15 +83,12 @@ void main() async {
     "resorts": "",
     "laboratories": "",
     "pawnshops": "",
-    "gift_shops": "",
     "watch_shops": "",
     "furniture": "",
     "medical_supplies": "",
-    "medical_centers": "",
     "music": "",
     "science_research": "",
     "the_property": "",
-    "underwear": "",
     "currency_exchange": "",
     "public_organizations": "",
     "clothes_shoes": "",
@@ -122,7 +110,6 @@ void main() async {
     "industry_equipment": "",
     "radio": "",
     "entertainment": "",
-    "settlement_work": "",
     "rehabilitation_centers": "",
     "advertising_marketing": "",
     "reproductive_medicine": "",
@@ -140,7 +127,6 @@ void main() async {
     "warehouses_storage": "",
     "media_news": "",
     "sports_clubs": "",
-    "sporting_goods": "",
     "dentistry": "",
     "insurance": "",
     "construction_materials": "",
@@ -151,34 +137,36 @@ void main() async {
     "texts_translations": "",
     "telecommunications_cinema": "",
     "technics_electronics": "",
-    "office_supplies": "",
     "home_goods_services": "",
     "trade": "",
-    "transport_service": "",
     "tourism_cruises": "",
-    "tour_operators": "",
     "cleaning_of_premises": "",
     "services_for_animals": "",
     "finance": "",
     "photo_studios": "",
-    "dry_cleaners": "",
     "hosting": "",
     "flowers_plants": "",
     "schools_training_centers": "",
-    "power_supply": "",
     "epilation": "",
     "jewelry": "",
     "legal_services": "",
+    "medical_centers": "",
+    "childrens_centers": "",
+    "petroleum_products_gas": "",
+    "energy": "",
+    "sports_sporting_goods": "",
+    "dry_cleaners_laundries": "",
+    "tour_operators_travel": "",
+    "transport_logistics": "",
+    "tickets": "",
+    "gifts_souvenirs": "",
+    "office_goods_services": "",
+    "architecture_engineering": "",
+    "defense_sector": "",
+    "biotechnology_pharmaceuticals": "",
+    "it_services": "",
+    "staff_work": "",
+    "ecology_environment": "",
+    "antiques_collecting": ""
   };
-
-  Map<String, String> res = {};
-
-  int i = 0;
-  fields.forEach((key, value) {
-    res[key] = "${fileListOfStrings[i]}";
-    i++;
-  });
-
-  File('input.txt').writeAsStringSync('');
-  print('"categories": ${json.encode(res)}');
 }

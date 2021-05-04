@@ -6,7 +6,7 @@ import 'model/company.dart';
 
 void main() async {
   // Импорт компании для 1 конкретной страны
-  await importForSingleCountry(country: 'RU', saveImport: true);
+  //await importForSingleCountry(country: 'RU', saveImport: true);
 
   // Импорт компаний для 193 стран
   await getForEachCountry();
@@ -61,7 +61,7 @@ Future<Map> importForSingleCountry({
         searchQuery: sourceUrl[index],
       ),
       keyTranslit: Search.encodeKey(
-        searchQuery: TranslitValidator.encode(
+        searchQuery: Translit.encode(
           assetsTranslit: assetsTranslit,
           text: sourceName[index],
         ),
@@ -109,7 +109,7 @@ Future<void> getForEachCountry() async {
     };
   }
 
-  //
+  // Импортируем полный список компаний готовых для загрузки в БД
   importFile.writeAsStringSync(
     jsonEncode({
       '__collections__': {

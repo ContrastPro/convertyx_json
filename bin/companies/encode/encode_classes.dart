@@ -51,7 +51,7 @@ class Search {
   }
 }
 
-class TranslitValidator {
+class Translit {
   static String encode({
     Map assetsTranslit,
     String text,
