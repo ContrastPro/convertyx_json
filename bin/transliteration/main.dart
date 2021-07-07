@@ -3,8 +3,6 @@ import 'dart:io';
 import 'dart:convert';
 
 void main() async {
-  final String outputName = 'fr'.toLowerCase();
-
   final List<String> fileFrom = await File(
     'bin/transliteration/source/input_from.txt',
   ).readAsLines();
@@ -28,7 +26,7 @@ void main() async {
       Map.fromIterables(fileFrom, fileTo);
 
   final File outputFile = File(
-    'bin/transliteration/output/$outputName-EN.json',
+    'bin/transliteration/output/translit-test.json',
   );
 
   outputFile.writeAsStringSync(

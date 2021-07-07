@@ -6,7 +6,10 @@ import 'model/company.dart';
 
 void main() async {
   // Импорт компании для 1 конкретной страны
-  //await importForSingleCountry(country: 'RU', saveImport: true);
+  //await importForSingleCountry(
+  // country: 'UA',
+  // saveImport: true,
+  //);
 
   // Импорт компаний для 193 стран
   await getForEachCountry();
@@ -35,14 +38,14 @@ Future<Map> importForSingleCountry({
   ).readAsString());
 
   final Map assetsTranslit = jsonDecode(await File(
-    'bin/companies/assets/ru-EN.json',
+    'bin/companies/assets/translit.json',
   ).readAsString());
 
   final Map outputMap = {};
   final int itemsLength = sourceName.length;
 
   for (int index = 0; index < itemsLength; index++) {
-    String uid = Uid.getUid();
+    final String uid = Uid.getUid();
 
     // Create company object and convert to map
     outputMap[uid] = Company(

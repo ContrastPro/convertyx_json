@@ -29,7 +29,7 @@ class Category {
     return assetsCategory.keys.firstWhere((e) {
       return assetsCategory[e] == value;
     }, orElse: () {
-      return 'leisure';
+      return 'other';
     });
   }
 }

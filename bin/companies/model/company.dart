@@ -21,23 +21,23 @@ class Company {
 
   Map<String, dynamic> toMap() {
     return {
-      "uid": uid,
-      "displayName": displayName,
-      "photoURL": photoURL,
-      "category": category,
-      "siteURL": siteURL,
-      "phone": null,
-      "address": null,
-      "email": null,
-      "rating": {
-        "totalRating": null,
-        "numOfReviews": null,
+      'uid': uid,
+      'displayName': displayName,
+      'photoURL': photoURL,
+      'category': category,
+      'siteURL': siteURL,
+      'phone': null,
+      'address': null,
+      'email': null,
+      'rating': {
+        'totalRating': null,
+        'numOfReviews': null,
       },
-      "validUntil": null,
-      "lastUpdate": null,
-      "keyName": keyName,
-      "keySite": keySite,
-      "keyTranslit": keyTranslit,
+      'validUntil': null,
+      'lastUpdate': null,
+      'keyName': keyName,
+      'keySite': keySite,
+      'keyTranslit': keyTranslit,
     };
   }
 }
