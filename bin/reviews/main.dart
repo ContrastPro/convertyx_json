@@ -19,10 +19,11 @@ Future<void> _create({
   );
   final String tableExcel = excel.tables.keys.first;
 
-  final Map companiesFile = jsonDecode(await File(
-    'bin/reviews/source/import-$country.json',
-  ).readAsString())['__collections__']['countries']['$country']
-      ['__collections__']['companies'];
+  final Map companiesFile = jsonDecode(
+    await File(
+      'bin/reviews/source/import-$country.json',
+    ).readAsString(),
+  )['__collections__']['countries']['$country']['__collections__']['companies'];
 
   final Map outputCompanyMap = {};
 
@@ -78,19 +79,13 @@ Future<void> _create({
         companyFile['rating']['totalRating'] = totalRating;
         companyFile['rating']['numOfReviews'] = numOfReviews;
 
-        outputCompanyMap.putIfAbsent(
-          companyFile['uid'],
-          () => companyFile,
-        );
+        outputCompanyMap[companyFile['uid']] = companyFile;
 
-        outputReviewsMap.putIfAbsent(
-          companyFile['uid'],
-          () => {
-            '__collections__': {
-              'clients': reviewsMap,
-            }
-          },
-        );
+        outputReviewsMap[companyFile['uid']] = {
+          '__collections__': {
+            'clients': reviewsMap,
+          }
+        };
       }
     }
   }
