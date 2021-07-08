@@ -31,7 +31,7 @@ Future<void> _create() async {
     final Data company = row[1];
     print('*** COMPANY: $company ***');
 
-    final String compUid = 'comp_uid_$rowIn';
+    final String compUid = '7e6300c4-13c6-4012-9df7-a22839a6e6c1';
 
     // 2) Создаём объект Review
     for (int cellIn = 4; cellIn < row.length;) {
@@ -64,8 +64,8 @@ Future<void> _create() async {
 
     if (reviewsMap.isNotEmpty) {
       outputReviewsMap[compUid] = {
-        'clients': {
-          '__collections__': reviewsMap,
+        '__collections__': {
+          'clients': reviewsMap,
         }
       };
     }
@@ -83,4 +83,12 @@ Future<void> _create() async {
       }
     }),
   );
+
+  /*'countries': {
+          'UA': {
+            '__collections__': {
+              'companies': outputCompanyMap,
+            }
+          }
+        },*/
 }
