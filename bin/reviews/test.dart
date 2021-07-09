@@ -3,6 +3,7 @@ import 'dart:convert';
 
 import 'package:excel/excel.dart';
 
+import 'models/review.dart';
 import '../companies/encode/encode_classes.dart';
 
 void main() async {
@@ -53,11 +54,17 @@ Future<void> _convertReviews({
         if (message != null) {
           final String uid = Uid.getUid();
 
-          _reviewsMap[uid] = {
-            'displayName': displayName,
-            'rating': rating,
-            'message': message,
-          };
+          _reviewsMap.addAll({
+            uid: Map.from(
+              Review(
+                uid: uid,
+                uidOwner: Uid.getUid(),
+                displayName: displayName,
+                message: message,
+                rating: rating == 0.0 ? 4.0 : rating,
+              ).toMap(),
+            )
+          });
 
           _numOfReviews++;
           _totalRating += rating;
@@ -108,9 +115,6 @@ void _addToOutputMap({Map companyInMap}) {
 }
 
 Future<void> _addToOutputFile() async {
-  print('**********************************************************************'
-      '**********************************************************************');
-
   final File importFile = File(
     'bin/reviews/output/import-reviews-UA.json',
   );
