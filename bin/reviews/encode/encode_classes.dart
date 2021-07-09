@@ -7,7 +7,7 @@ class Logger {
 
   void display(int current, int total) {
     double percent = (current / total) * 100;
-    String logs = '\n[$current] Done: ${percent.toStringAsFixed(1)} % '
+    String logs = '[$current] Done: ${percent.toStringAsFixed(1)} % '
         '${_stopwatch.elapsedMilliseconds / 1000} ms\n';
     print(logs);
   }

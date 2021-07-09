@@ -9,8 +9,8 @@ import '../companies/encode/encode_classes.dart';
 
 void main() async {
   await _convertReviews(
-    country: 'UA',
-    fileName: 'UA отзывы',
+    country: 'BY',
+    fileName: 'RU+BE отзывы',
   );
 }
 
@@ -131,7 +131,7 @@ void _addToOutputMap({
   print(
     '\nTOTAL: <$_siteURL> ${companyInMap['uid']} '
     'REVIEWS: $_numOfReviews '
-    'RATING: $_totalRating\n',
+    'RATING: $_totalRating',
   );
   logger.display(_currentRow, _totalRow);
 }
@@ -140,11 +140,15 @@ Future<void> _addToOutputFile({
   String country,
   Logger logger,
 }) async {
-  final File importFile = File(
+  final File importFileCompanies = File(
+    'bin/reviews/output/import-companies-$country.json',
+  );
+
+  final File importFileReviews = File(
     'bin/reviews/output/import-reviews-$country.json',
   );
 
-  importFile.writeAsStringSync(
+  importFileCompanies.writeAsStringSync(
     jsonEncode({
       '__collections__': {
         'countries': {
@@ -154,6 +158,13 @@ Future<void> _addToOutputFile({
             }
           }
         },
+      }
+    }),
+  );
+
+  importFileReviews.writeAsStringSync(
+    jsonEncode({
+      '__collections__': {
         'reviews': _outputReviews,
       }
     }),
