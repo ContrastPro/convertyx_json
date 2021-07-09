@@ -21,6 +21,7 @@ class Review {
       'displayName': displayName,
       'message': message,
       'rating': rating,
+      'creationTime': null,
       'likes': [],
       'subRev': [],
     };
