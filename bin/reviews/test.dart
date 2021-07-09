@@ -7,8 +7,10 @@ import 'models/review.dart';
 import '../companies/encode/encode_classes.dart';
 
 void main() async {
-  print('\n\n *** START *** \n\n');
-  await _convertReviews(country: 'UA');
+  await _convertReviews(
+    country: 'UA',
+    fileName: 'TEST',
+  );
 }
 
 String _siteURL;
@@ -21,7 +23,10 @@ final Map _outputReviews = {};
 
 Future<void> _convertReviews({
   String country,
+  String fileName,
 }) async {
+  print('\n\n *** START *** \n\n');
+
   final Map companiesInMap = jsonDecode(
     await File(
       'bin/reviews/source/import-$country.json',
@@ -29,7 +34,7 @@ Future<void> _convertReviews({
   )['__collections__']['countries']['$country']['__collections__']['companies'];
 
   final Excel excel = Excel.decodeBytes(
-    File('bin/reviews/source/UA.xlsx').readAsBytesSync(),
+    File('bin/reviews/source/$fileName.xlsx').readAsBytesSync(),
   );
 
   final String tableExcel = excel.tables.keys.first;
@@ -86,7 +91,7 @@ Future<void> _convertReviews({
     }
   }
 
-  await _addToOutputFile();
+  await _addToOutputFile(country: country);
 }
 
 void _addToOutputMap({Map companyInMap}) {
@@ -114,16 +119,16 @@ void _addToOutputMap({Map companyInMap}) {
   );
 }
 
-Future<void> _addToOutputFile() async {
+Future<void> _addToOutputFile({String country}) async {
   final File importFile = File(
-    'bin/reviews/output/import-reviews-UA.json',
+    'bin/reviews/output/import-reviews-$country.json',
   );
 
   importFile.writeAsStringSync(
     jsonEncode({
       '__collections__': {
         'countries': {
-          'UA': {
+          '$country': {
             '__collections__': {
               'companies': _outputCompany,
             }

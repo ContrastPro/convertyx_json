@@ -13,7 +13,7 @@ void main() async {
 Future<void> _create({
   String country,
 }) async {
-  final File fileExcel = File('bin/reviews/source/UA.xlsx');
+  final File fileExcel = File('bin/reviews/source/TEST.xlsx');
   final Excel excel = Excel.decodeBytes(
     fileExcel.readAsBytesSync(),
   );
