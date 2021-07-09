@@ -4,7 +4,6 @@ class Review {
   String displayName;
   String message;
   double rating;
-  Map creationTime;
 
   Review({
     this.uid,
@@ -12,7 +11,6 @@ class Review {
     this.displayName,
     this.message,
     this.rating,
-    this.creationTime,
   });
 
   Map<String, dynamic> toMap() {
@@ -23,7 +21,6 @@ class Review {
       'displayName': displayName,
       'message': message,
       'rating': rating,
-      'creationTime': Map.from(creationTime),
       'likes': [],
       'subRev': [],
     };

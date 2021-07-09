@@ -83,7 +83,6 @@ Future<void> _convertReviews({
                 displayName: displayName,
                 message: message,
                 rating: rating == 0.0 ? 4.0 : rating,
-                creationTime: _creationTime,
               ).toMap(),
             )
           });
