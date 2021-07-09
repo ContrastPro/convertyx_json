@@ -4,109 +4,182 @@ import 'dart:convert';
 import 'package:excel/excel.dart';
 
 import 'models/review.dart';
+import 'encode/encode_classes.dart';
 import '../companies/encode/encode_classes.dart';
 
 void main() async {
-  await _create(country: 'UA');
+  await _convertReviews(
+    country: 'BY',
+    fileName: 'RU+BE отзывы',
+  );
 }
 
-Future<void> _create({
-  String country,
-}) async {
-  final File fileExcel = File('bin/reviews/source/TEST.xlsx');
-  final Excel excel = Excel.decodeBytes(
-    fileExcel.readAsBytesSync(),
-  );
-  final String tableExcel = excel.tables.keys.first;
+int _currentRow;
+int _totalRow;
 
-  final Map companiesFile = jsonDecode(
+String _siteURL;
+int _numOfReviews = 0;
+double _totalRating = 0.0;
+final Map _reviewsMap = {};
+
+final Map _outputCompany = {};
+final Map _outputReviews = {};
+
+//'Timestamp(seconds=1625830840, nanoseconds=853757000)';
+const Map _creationTime = {
+  '__datatype__': 'timestamp',
+  'value': {
+    '_seconds': 1625830840,
+    '_nanoseconds': 853757000,
+  }
+};
+
+Future<void> _convertReviews({
+  String country,
+  String fileName,
+}) async {
+  final Logger logger = Logger();
+  print('\n\n *** START *** \n\n');
+
+  final Map companiesInMap = jsonDecode(
     await File(
       'bin/reviews/source/import-$country.json',
     ).readAsString(),
   )['__collections__']['countries']['$country']['__collections__']['companies'];
 
-  final Map outputCompanyMap = {};
+  final Excel excel = Excel.decodeBytes(
+    File('bin/reviews/source/$fileName.xlsx').readAsBytesSync(),
+  );
 
-  final Map outputReviewsMap = {};
+  final String tableExcel = excel.tables.keys.first;
 
-  // Начинаем обход со второй строки
-  for (int rowIn = 1; rowIn < excel.tables[tableExcel].rows.length; rowIn++) {
-    // Устанавливаем текущую строку
-    final List<Data> row = excel.tables[tableExcel].rows[rowIn];
+  _totalRow = excel.tables[tableExcel].rows.length;
+  for (int i = 1; i < _totalRow; i++) {
+    _currentRow = i;
+    final List<Data> row = excel.tables[tableExcel].rows[i];
+    _siteURL = row[1].value.trim();
 
-    final Map companyFile = companiesFile.entries.firstWhere((e) {
-      return e.value['siteURL'] == row[1].value.trim();
+    final Map companyInMap = companiesInMap.entries.firstWhere((e) {
+      return e.value['siteURL'] == _siteURL;
     }, orElse: () => null)?.value;
 
-    if (companyFile != null) {
-      int numOfReviews = 0;
+    if (companyInMap != null) {
+      for (int y = 4; y < row.length;) {
+        final String displayName = row[y]?.value?.toString();
+        y++;
+        final double rating = row[y].value.toDouble();
+        y++;
+        final String message = row[y]?.value?.toString();
+        y++;
 
-      double totalRating = 0;
-
-      final Map reviewsMap = {};
-
-      // Создаём объект Review
-      for (int cellIn = 4; cellIn < row.length;) {
-        final String displayName = row[cellIn]?.value;
-        cellIn++;
-        final double rating = row[cellIn]?.value?.toDouble();
-        cellIn++;
-        final String message = row[cellIn]?.value;
-        cellIn++;
-
-        // 1. Отзывы с оценкой 0, но с текстом и автором - необходимо импортировать с оценкой 4
-        // 2. Отзывы без автора, но с текстом и оценкой - необходимо импортировать с указанием автора Anonymous
-        // 3. Отзывы без текста, но с автором и оценкой - не импортируем
-
-        if (message != null) {
+        if (message != null && message.isNotEmpty) {
           final String uid = Uid.getUid();
 
-          reviewsMap[uid] = Review(
-            uid: uid,
-            uidOwner: Uid.getUid(),
-            displayName: displayName,
-            message: message,
-            rating: rating == 0.0 ? 4.0 : rating,
-          ).toMap();
+          _reviewsMap.addAll({
+            uid: Map.from(
+              Review(
+                uid: uid,
+                uidOwner: Uid.getUid(),
+                displayName: displayName,
+                message: message,
+                rating: rating == 0.0 ? 4.0 : rating,
+                creationTime: _creationTime,
+              ).toMap(),
+            )
+          });
 
-          numOfReviews++;
-          totalRating = totalRating + rating;
+          _numOfReviews++;
+          _totalRating += rating == 0.0 ? 4.0 : rating;
         }
       }
 
-      if (reviewsMap.isNotEmpty) {
-        companyFile['displayName'] = companyFile['displayName'].trim();
-        companyFile['rating']['totalRating'] = totalRating;
-        companyFile['rating']['numOfReviews'] = numOfReviews;
+      if (_reviewsMap.isNotEmpty) {
+        if (i + 1 < excel.tables[tableExcel].rows.length) {
+          final List<Data> nextRow = excel.tables[tableExcel].rows[i + 1];
 
-        outputCompanyMap[companyFile['uid']] = companyFile;
-
-        outputReviewsMap[companyFile['uid']] = {
-          '__collections__': {
-            'clients': reviewsMap,
+          if (nextRow[1].value != _siteURL) {
+            _addToOutputMap(
+              companyInMap: companyInMap,
+              logger: logger,
+            );
+            _numOfReviews = 0;
+            _totalRating = 0.0;
+            _reviewsMap.clear();
           }
-        };
+        }
       }
     }
   }
 
-  // Write to file
-  final File importFile = File(
+  await _addToOutputFile(
+    country: country,
+    logger: logger,
+  );
+}
+
+void _addToOutputMap({
+  Map companyInMap,
+  Logger logger,
+}) {
+  companyInMap['displayName'] = companyInMap['displayName'].trim();
+  companyInMap['rating']['totalRating'] = _totalRating;
+  companyInMap['rating']['numOfReviews'] = _numOfReviews;
+  companyInMap['lastUpdate'] = _creationTime;
+
+  _outputCompany.addAll({
+    companyInMap['uid']: Map.from(companyInMap),
+  });
+
+  _outputReviews.addAll({
+    companyInMap['uid']: Map.from({
+      '__collections__': Map.from({
+        'clients': Map.from(_reviewsMap),
+      })
+    }),
+  });
+
+  print(_reviewsMap);
+  print(
+    '\nTOTAL: <$_siteURL> ${companyInMap['uid']} '
+        'REVIEWS: $_numOfReviews '
+        'RATING: $_totalRating',
+  );
+  logger.display(_currentRow, _totalRow);
+}
+
+Future<void> _addToOutputFile({
+  String country,
+  Logger logger,
+}) async {
+  final File importFileCompanies = File(
+    'bin/reviews/output/import-companies-$country.json',
+  );
+
+  final File importFileReviews = File(
     'bin/reviews/output/import-reviews-$country.json',
   );
 
-  importFile.writeAsStringSync(
+  importFileCompanies.writeAsStringSync(
     jsonEncode({
       '__collections__': {
         'countries': {
           '$country': {
             '__collections__': {
-              'companies': outputCompanyMap,
+              'companies': _outputCompany,
             }
           }
         },
-        'reviews': outputReviewsMap,
       }
     }),
   );
+
+  importFileReviews.writeAsStringSync(
+    jsonEncode({
+      '__collections__': {
+        'reviews': _outputReviews,
+      }
+    }),
+  );
+
+  logger.displayTotal();
 }
