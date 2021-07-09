@@ -50,23 +50,23 @@ Future<Map> importForSingleCountry({
     // Create company object and convert to map
     outputMap[uid] = Company(
       uid: uid,
-      displayName: sourceName[index],
-      siteURL: sourceUrl[index],
-      photoURL: Url.encodeFavicon(url: sourceUrl[index]),
+      displayName: sourceName[index].trim(),
+      siteURL: sourceUrl[index].trim(),
+      photoURL: Url.encodeFavicon(url: sourceUrl[index].trim()),
       category: Category.encode(
         assetsCategory: assetsCategory,
-        value: sourceCategory[index],
+        value: sourceCategory[index].trim(),
       ),
       keyName: Search.encodeKey(
-        searchQuery: sourceName[index],
+        searchQuery: sourceName[index].trim(),
       ),
       keySite: Search.encodeKey(
-        searchQuery: sourceUrl[index],
+        searchQuery: sourceUrl[index].trim(),
       ),
       keyTranslit: Search.encodeKey(
         searchQuery: Translit.encode(
           assetsTranslit: assetsTranslit,
-          text: sourceName[index],
+          text: sourceName[index].trim(),
         ),
       ),
     ).toMap();

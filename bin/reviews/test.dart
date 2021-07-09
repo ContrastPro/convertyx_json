@@ -1,5 +1,5 @@
-import 'dart:convert';
 import 'dart:io';
+import 'dart:convert';
 
 import 'package:excel/excel.dart';
 
@@ -13,10 +13,10 @@ void main() async {
 String _siteURL;
 int _numOfReviews = 0;
 double _totalRating = 0.0;
-Map _reviewsMap = {};
+final Map _reviewsMap = {};
 
-Map _outputCompanies = {};
-Map _outputReviews = {};
+final Map _outputCompany = {};
+final Map _outputReviews = {};
 
 Future<void> _convertReviews({
   String country,
@@ -35,68 +35,82 @@ Future<void> _convertReviews({
 
   for (int i = 1; i < excel.tables[tableExcel].rows.length; i++) {
     final List<Data> row = excel.tables[tableExcel].rows[i];
-    _siteURL = row[1].value;
+    _siteURL = row[1].value.trim();
 
-    for (int y = 4; y < row.length;) {
-      final String displayName = row[y]?.value;
-      y++;
-      final double rating = row[y].value.toDouble();
-      y++;
-      final String message = row[y]?.value;
-      y++;
+    final Map companyInMap = companiesInMap.entries.firstWhere((e) {
+      return e.value['siteURL'] == _siteURL;
+    }, orElse: () => null)?.value;
 
-      if (message != null) {
-        final String uid = Uid.getUid();
+    if (companyInMap != null) {
+      for (int y = 4; y < row.length;) {
+        final String displayName = row[y]?.value;
+        y++;
+        final double rating = row[y].value.toDouble();
+        y++;
+        final String message = row[y]?.value;
+        y++;
 
-        _reviewsMap[uid] = {
-          'displayName': displayName,
-          'rating': rating,
-          'message': message,
-        };
+        if (message != null) {
+          final String uid = Uid.getUid();
 
-        _numOfReviews++;
-        _totalRating += rating;
-      }
-    }
+          _reviewsMap[uid] = {
+            'displayName': displayName,
+            'rating': rating,
+            'message': message,
+          };
 
-    if (_reviewsMap.isNotEmpty) {
-      final Map companyInMap = companiesInMap.entries.firstWhere((e) {
-        return e.value['siteURL'] == row[1].value.trim();
-      }, orElse: () => null)?.value;
-
-      if (i + 1 < excel.tables[tableExcel].rows.length) {
-        final List<Data> nextRow = excel.tables[tableExcel].rows[i + 1];
-
-        if (nextRow[1].value != _siteURL) {
-          await _addToOutputMap(compUid: companyInMap['uid']);
-          _numOfReviews = 0;
-          _totalRating = 0.0;
-          _reviewsMap.clear();
+          _numOfReviews++;
+          _totalRating += rating;
         }
-      } else {
-        await _addToOutputFile();
+      }
+
+      if (_reviewsMap.isNotEmpty) {
+        if (i + 1 < excel.tables[tableExcel].rows.length) {
+          final List<Data> nextRow = excel.tables[tableExcel].rows[i + 1];
+
+          if (nextRow[1].value != _siteURL) {
+            _addToOutputMap(companyInMap: companyInMap);
+            _numOfReviews = 0;
+            _totalRating = 0.0;
+            _reviewsMap.clear();
+          }
+        }
       }
     }
   }
+
+  await _addToOutputFile();
 }
 
-Future<void> _addToOutputMap({String compUid}) async {
-  _outputReviews[compUid] = {
-    '__collections__': {
-      'clients': _reviewsMap,
-    }
-  };
+void _addToOutputMap({Map companyInMap}) {
+  companyInMap['displayName'] = companyInMap['displayName'].trim();
+  companyInMap['rating']['totalRating'] = _totalRating;
+  companyInMap['rating']['numOfReviews'] = _numOfReviews;
+
+  _outputCompany.addAll({
+    companyInMap['uid']: Map.from(companyInMap),
+  });
+
+  _outputReviews.addAll({
+    companyInMap['uid']: Map.from({
+      '__collections__': Map.from({
+        'clients': Map.from(_reviewsMap),
+      })
+    }),
+  });
 
   print(_reviewsMap);
   print(
-    '\nTOTAL: <$_siteURL> $compUid '
+    '\nTOTAL: <$_siteURL> ${companyInMap['uid']} '
     'REVIEWS: $_numOfReviews '
     'RATING: $_totalRating\n',
   );
 }
 
 Future<void> _addToOutputFile() async {
-  // Write to file
+  print('**********************************************************************'
+      '**********************************************************************');
+
   final File importFile = File(
     'bin/reviews/output/import-reviews-UA.json',
   );
@@ -104,22 +118,15 @@ Future<void> _addToOutputFile() async {
   importFile.writeAsStringSync(
     jsonEncode({
       '__collections__': {
-        /*'countries': {
-          '$country': {
+        'countries': {
+          'UA': {
             '__collections__': {
-              'companies': outputCompanyMap,
+              'companies': _outputCompany,
             }
           }
-        },*/
+        },
         'reviews': _outputReviews,
       }
     }),
-  );
-
-  print(_reviewsMap);
-  print(
-    '\nLAST TOTAL: <$_siteURL> '
-    'REVIEWS: $_numOfReviews '
-    'RATING: $_totalRating\n',
   );
 }
