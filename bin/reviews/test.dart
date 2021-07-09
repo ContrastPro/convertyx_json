@@ -4,14 +4,18 @@ import 'dart:convert';
 import 'package:excel/excel.dart';
 
 import 'models/review.dart';
+import 'encode/encode_classes.dart';
 import '../companies/encode/encode_classes.dart';
 
 void main() async {
   await _convertReviews(
     country: 'UA',
-    fileName: 'TEST',
+    fileName: 'UA отзывы',
   );
 }
+
+int _currentRow;
+int _totalRow;
 
 String _siteURL;
 int _numOfReviews = 0;
@@ -25,6 +29,7 @@ Future<void> _convertReviews({
   String country,
   String fileName,
 }) async {
+  final Logger logger = Logger();
   print('\n\n *** START *** \n\n');
 
   final Map companiesInMap = jsonDecode(
@@ -39,7 +44,9 @@ Future<void> _convertReviews({
 
   final String tableExcel = excel.tables.keys.first;
 
-  for (int i = 1; i < excel.tables[tableExcel].rows.length; i++) {
+  _totalRow = excel.tables[tableExcel].rows.length;
+  for (int i = 1; i < _totalRow; i++) {
+    _currentRow = i;
     final List<Data> row = excel.tables[tableExcel].rows[i];
     _siteURL = row[1].value.trim();
 
@@ -49,14 +56,14 @@ Future<void> _convertReviews({
 
     if (companyInMap != null) {
       for (int y = 4; y < row.length;) {
-        final String displayName = row[y]?.value;
+        final String displayName = row[y]?.value?.toString();
         y++;
         final double rating = row[y].value.toDouble();
         y++;
-        final String message = row[y]?.value;
+        final String message = row[y]?.value?.toString();
         y++;
 
-        if (message != null) {
+        if (message != null && message.isNotEmpty) {
           final String uid = Uid.getUid();
 
           _reviewsMap.addAll({
@@ -72,7 +79,7 @@ Future<void> _convertReviews({
           });
 
           _numOfReviews++;
-          _totalRating += rating;
+          _totalRating += rating == 0.0 ? 4.0 : rating;
         }
       }
 
@@ -81,7 +88,10 @@ Future<void> _convertReviews({
           final List<Data> nextRow = excel.tables[tableExcel].rows[i + 1];
 
           if (nextRow[1].value != _siteURL) {
-            _addToOutputMap(companyInMap: companyInMap);
+            _addToOutputMap(
+              companyInMap: companyInMap,
+              logger: logger,
+            );
             _numOfReviews = 0;
             _totalRating = 0.0;
             _reviewsMap.clear();
@@ -91,10 +101,16 @@ Future<void> _convertReviews({
     }
   }
 
-  await _addToOutputFile(country: country);
+  await _addToOutputFile(
+    country: country,
+    logger: logger,
+  );
 }
 
-void _addToOutputMap({Map companyInMap}) {
+void _addToOutputMap({
+  Map companyInMap,
+  Logger logger,
+}) {
   companyInMap['displayName'] = companyInMap['displayName'].trim();
   companyInMap['rating']['totalRating'] = _totalRating;
   companyInMap['rating']['numOfReviews'] = _numOfReviews;
@@ -117,9 +133,13 @@ void _addToOutputMap({Map companyInMap}) {
     'REVIEWS: $_numOfReviews '
     'RATING: $_totalRating\n',
   );
+  logger.display(_currentRow, _totalRow);
 }
 
-Future<void> _addToOutputFile({String country}) async {
+Future<void> _addToOutputFile({
+  String country,
+  Logger logger,
+}) async {
   final File importFile = File(
     'bin/reviews/output/import-reviews-$country.json',
   );
@@ -138,4 +158,6 @@ Future<void> _addToOutputFile({String country}) async {
       }
     }),
   );
+
+  logger.displayTotal();
 }
