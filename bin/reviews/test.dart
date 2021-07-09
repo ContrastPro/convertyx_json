@@ -25,6 +25,15 @@ final Map _reviewsMap = {};
 final Map _outputCompany = {};
 final Map _outputReviews = {};
 
+//'Timestamp(seconds=1625830840, nanoseconds=853757000)';
+const Map _creationTime = {
+  '__datatype__': 'timestamp',
+  'value': {
+    '_seconds': 1625830840,
+    '_nanoseconds': 853757000,
+  }
+};
+
 Future<void> _convertReviews({
   String country,
   String fileName,
@@ -74,6 +83,7 @@ Future<void> _convertReviews({
                 displayName: displayName,
                 message: message,
                 rating: rating == 0.0 ? 4.0 : rating,
+                creationTime: _creationTime,
               ).toMap(),
             )
           });
@@ -114,6 +124,7 @@ void _addToOutputMap({
   companyInMap['displayName'] = companyInMap['displayName'].trim();
   companyInMap['rating']['totalRating'] = _totalRating;
   companyInMap['rating']['numOfReviews'] = _numOfReviews;
+  companyInMap['lastUpdate'] = _creationTime;
 
   _outputCompany.addAll({
     companyInMap['uid']: Map.from(companyInMap),
