@@ -10,6 +10,7 @@ dependencies:
   uuid: 3.0.2
   http: ^0.13.1
   excel: ^2.0.0-null-safety-3
+  logger: ^1.0.0
 
 dev_dependencies:
   pedantic: ^1.9.0

@@ -8,10 +8,13 @@ import 'encode/encode_classes.dart';
 import '../companies/encode/encode_classes.dart';
 
 void main() async {
-  await _convertReviews(
-    country: 'BY',
-    fileName: 'RU+BE отзывы',
-  );
+  for (int i = 5; i < 11; i++) {
+    await _convertReviews(
+      suffix: '$i',
+      country: 'US',
+      fileName: '3 партия',
+    );
+  }
 }
 
 int _currentRow;
@@ -35,15 +38,18 @@ const Map _creationTime = {
 };
 
 Future<void> _convertReviews({
+  String suffix,
   String country,
   String fileName,
 }) async {
-  final Logger logger = Logger();
+  final TimeLogger timeLogger = TimeLogger();
   print('\n\n *** START *** \n\n');
 
   final Map companiesInMap = jsonDecode(
     await File(
-      'bin/reviews/source/import-$country.json',
+      suffix != null
+          ? 'bin/reviews/source/import-${country}_$suffix.json'
+          : 'bin/reviews/source/import-$country.json',
     ).readAsString(),
   )['__collections__']['countries']['$country']['__collections__']['companies'];
 
@@ -99,7 +105,7 @@ Future<void> _convertReviews({
           if (nextRow[1].value != _siteURL) {
             _addToOutputMap(
               companyInMap: companyInMap,
-              logger: logger,
+              timeLogger: timeLogger,
             );
             _numOfReviews = 0;
             _totalRating = 0.0;
@@ -111,14 +117,15 @@ Future<void> _convertReviews({
   }
 
   await _addToOutputFile(
+    suffix: suffix,
     country: country,
-    logger: logger,
+    timeLogger: timeLogger,
   );
 }
 
 void _addToOutputMap({
   Map companyInMap,
-  Logger logger,
+  TimeLogger timeLogger,
 }) {
   companyInMap['displayName'] = companyInMap['displayName'].trim();
   companyInMap['rating']['totalRating'] = _totalRating;
@@ -138,24 +145,32 @@ void _addToOutputMap({
   });
 
   print(_reviewsMap);
-  print(
-    '\nTOTAL: <$_siteURL> ${companyInMap['uid']} '
+  timeLogger.displayCurrent(
+    _currentRow,
+    _totalRow,
+    message: 'TOTAL: <$_siteURL> ${companyInMap['uid']} '
         'REVIEWS: $_numOfReviews '
         'RATING: $_totalRating',
   );
-  logger.display(_currentRow, _totalRow);
 }
 
 Future<void> _addToOutputFile({
+  String suffix,
   String country,
-  Logger logger,
+  TimeLogger timeLogger,
 }) async {
+  // TODO:
   final File importFileCompanies = File(
-    'bin/reviews/output/import-companies-$country.json',
+    suffix != null
+        ? 'bin/reviews/output/import-companies-${country}_$suffix.json'
+        : 'bin/reviews/output/import-companies-$country.json',
   );
 
+  // TODO:
   final File importFileReviews = File(
-    'bin/reviews/output/import-reviews-$country.json',
+    suffix != null
+        ? 'bin/reviews/output/import-reviews-${country}_$suffix.json'
+        : 'bin/reviews/output/import-reviews-$country.json',
   );
 
   importFileCompanies.writeAsStringSync(
@@ -180,5 +195,5 @@ Future<void> _addToOutputFile({
     }),
   );
 
-  logger.displayTotal();
+  timeLogger.displayTotal();
 }

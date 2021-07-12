@@ -1,20 +1,36 @@
-class Logger {
-  final Stopwatch _stopwatch = Stopwatch();
+import 'package:logger/logger.dart';
 
-  Logger() {
+class TimeLogger {
+  final Stopwatch _stopwatch = Stopwatch();
+  final Logger _logger = Logger(
+    printer: PrettyPrinter(
+      methodCount: 0,
+      errorMethodCount: 3,
+      printEmojis: false,
+    ),
+  );
+
+  TimeLogger() {
     _stopwatch.start();
   }
 
-  void display(int current, int total) {
+  void displayCurrent(int current, int total, {String message}) {
     double percent = (current / total) * 100;
-    String logs = '[$current] Done: ${percent.toStringAsFixed(1)} % '
-        '${_stopwatch.elapsedMilliseconds / 1000} ms\n';
-    print(logs);
+    String logsTime = '[$current:$total] Done: ${percent.toStringAsFixed(1)} % '
+        '${_stopwatch.elapsedMilliseconds / 1000} ms';
+
+    if (message != null) {
+      _logger.i('$message\n$logsTime');
+      return;
+    }
+
+    _logger.i(logsTime);
   }
 
   void displayTotal() {
     _stopwatch.stop();
-    String logs = 'Total time: ${_stopwatch.elapsedMilliseconds / 1000} sec';
-    print(logs);
+    String logs = 'Total time: '
+        '${_stopwatch.elapsedMilliseconds / 1000} ms';
+    _logger.wtf(logs);
   }
 }

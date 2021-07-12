@@ -6,13 +6,13 @@ import 'model/company.dart';
 
 void main() async {
   // Импорт компании для 1 конкретной страны
-  //await importForSingleCountry(
-  // country: 'UA',
-  // saveImport: true,
-  //);
+  await importForSingleCountry(
+    country: 'AR',
+    saveImport: true,
+  );
 
   // Импорт компаний для 193 стран
-  await getForEachCountry();
+  //await getForEachCountry();
 }
 
 Future<Map> importForSingleCountry({

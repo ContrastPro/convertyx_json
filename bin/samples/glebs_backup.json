@@ -1,0 +1,926 @@
+{
+  "__collections__": {
+    "countries": {
+      "RU": {
+        "__collections__": {
+          "companies": {
+            "11636c00-9db2-11eb-90b0-e16ef8d5e3d5": {
+              "keySite": [
+                "f",
+                "fo",
+                "fox",
+                "foxt",
+                "foxtr",
+                "foxtro",
+                "foxtrot",
+                "foxtrot.",
+                "foxtrot.c",
+                "foxtrot.co",
+                "foxtrot.com",
+                "foxtrot.com.",
+                "foxtrot.com.u",
+                "foxtrot.com.ua"
+              ],
+              "uid": "11636c00-9db2-11eb-90b0-e16ef8d5e3d5",
+              "phone": null,
+              "email": null,
+              "address": null,
+              "validUntil": null,
+              "keyTranslit": [
+                "f",
+                "fo",
+                "fox",
+                "foxs",
+                "foxst",
+                "foxstr",
+                "foxstro",
+                "foxstrot"
+              ],
+              "photoURL": "https://www.foxtrot.com.ua/favicon.ico",
+              "lastUpdate": {
+                "__datatype__": "timestamp",
+                "value": {
+                  "_seconds": 1618467396,
+                  "_nanoseconds": 706000000
+                }
+              },
+              "rating": {
+                "totalRating": 10,
+                "numOfReviews": 3
+              },
+              "keyName": [
+                "f",
+                "fo",
+                "fox",
+                "foxs",
+                "foxst",
+                "foxstr",
+                "foxstro",
+                "foxstrot"
+              ],
+              "displayName": "Foxstrot",
+              "siteURL": "https://www.foxtrot.com.ua",
+              "category": "online_stores",
+              "__collections__": {}
+            },
+            "2113c200-9db0-11eb-90b0-e16ef8d5e3d5": {
+              "phone": null,
+              "displayName": "Google",
+              "keySite": [
+                "g",
+                "go",
+                "goo",
+                "goog",
+                "googl",
+                "google",
+                "google.",
+                "google.c",
+                "google.co",
+                "google.com"
+              ],
+              "uid": "2113c200-9db0-11eb-90b0-e16ef8d5e3d5",
+              "rating": {
+                "totalRating": 24,
+                "numOfReviews": 7
+              },
+              "address": null,
+              "email": null,
+              "keyName": [
+                "g",
+                "go",
+                "goo",
+                "goog",
+                "googl",
+                "google"
+              ],
+              "category": "websites",
+              "siteURL": "https://google.com",
+              "validUntil": null,
+              "lastUpdate": {
+                "__datatype__": "timestamp",
+                "value": {
+                  "_seconds": 1618466920,
+                  "_nanoseconds": 470000000
+                }
+              },
+              "photoURL": "https://google.com/favicon.ico",
+              "keyTranslit": [
+                "g",
+                "go",
+                "goo",
+                "goog",
+                "googl",
+                "google"
+              ],
+              "__collections__": {}
+            },
+            "4d53c580-9db1-11eb-90b0-e16ef8d5e3d5": {
+              "keySite": [
+                "r",
+                "ro",
+                "roz",
+                "roze",
+                "rozet",
+                "rozetk",
+                "rozetka",
+                "rozetka.",
+                "rozetka.c",
+                "rozetka.co",
+                "rozetka.com",
+                "rozetka.com.",
+                "rozetka.com.u",
+                "rozetka.com.ua"
+              ],
+              "validUntil": null,
+              "category": "online_stores",
+              "lastUpdate": {
+                "__datatype__": "timestamp",
+                "value": {
+                  "_seconds": 1618467056,
+                  "_nanoseconds": 437000000
+                }
+              },
+              "keyName": [
+                "р",
+                "ро",
+                "роз",
+                "розе",
+                "розет",
+                "розетк",
+                "розетка"
+              ],
+              "phone": null,
+              "address": null,
+              "photoURL": "https://rozetka.com.ua/favicon.ico",
+              "rating": {
+                "numOfReviews": 3,
+                "totalRating": 15
+              },
+              "keyTranslit": [
+                "r",
+                "ro",
+                "roz",
+                "roze",
+                "rozet",
+                "rozetk",
+                "rozetka"
+              ],
+              "siteURL": "https://rozetka.com.ua",
+              "email": null,
+              "displayName": "Розетка",
+              "uid": "4d53c580-9db1-11eb-90b0-e16ef8d5e3d5",
+              "__collections__": {}
+            },
+            "5f697b60-9db2-11eb-90b0-e16ef8d5e3d5": {
+              "displayName": "Одесский Политехнический Университе",
+              "siteURL": "https://opu.ua",
+              "rating": {
+                "totalRating": 5,
+                "numOfReviews": 3
+              },
+              "keySite": [
+                "o",
+                "op",
+                "opu",
+                "opu.",
+                "opu.u",
+                "opu.ua"
+              ],
+              "uid": "5f697b60-9db2-11eb-90b0-e16ef8d5e3d5",
+              "keyName": [
+                "о",
+                "од",
+                "оде",
+                "одес",
+                "одесс",
+                "одесск",
+                "одесски",
+                "одесский",
+                "одесский ",
+                "одесский п",
+                "одесский по",
+                "одесский пол",
+                "одесский поли",
+                "одесский полит",
+                "одесский полите",
+                "одесский политех",
+                "одесский политехн",
+                "одесский политехни",
+                "одесский политехнич",
+                "одесский политехниче",
+                "одесский политехничес",
+                "одесский политехническ",
+                "одесский политехнически",
+                "одесский политехнический",
+                "одесский политехнический ",
+                "одесский политехнический у",
+                "одесский политехнический ун",
+                "одесский политехнический уни",
+                "одесский политехнический унив",
+                "одесский политехнический униве",
+                "одесский политехнический универ",
+                "одесский политехнический универс",
+                "одесский политехнический универси",
+                "одесский политехнический университ",
+                "одесский политехнический университе"
+              ],
+              "lastUpdate": {
+                "__datatype__": "timestamp",
+                "value": {
+                  "_seconds": 1618467529,
+                  "_nanoseconds": 323000000
+                }
+              },
+              "validUntil": null,
+              "email": null,
+              "address": null,
+              "photoURL": "https://opu.ua/favicon.ico",
+              "category": "online_stores",
+              "phone": null,
+              "keyTranslit": [
+                "o",
+                "od",
+                "ode",
+                "odes",
+                "odess",
+                "odessk",
+                "odesski",
+                "odesskij",
+                "odesskij ",
+                "odesskij p",
+                "odesskij po",
+                "odesskij pol",
+                "odesskij poli",
+                "odesskij polit",
+                "odesskij polite",
+                "odesskij politeh",
+                "odesskij politehn",
+                "odesskij politehni",
+                "odesskij politehnic",
+                "odesskij politehnich",
+                "odesskij politehniche",
+                "odesskij politehniches",
+                "odesskij politehnichesk",
+                "odesskij politehnicheski",
+                "odesskij politehnicheskij",
+                "odesskij politehnicheskij ",
+                "odesskij politehnicheskij u",
+                "odesskij politehnicheskij un",
+                "odesskij politehnicheskij uni",
+                "odesskij politehnicheskij univ",
+                "odesskij politehnicheskij unive",
+                "odesskij politehnicheskij univer",
+                "odesskij politehnicheskij univers",
+                "odesskij politehnicheskij universi",
+                "odesskij politehnicheskij universit",
+                "odesskij politehnicheskij universite"
+              ],
+              "__collections__": {}
+            },
+            "91d83510-9db1-11eb-90b0-e16ef8d5e3d5": {
+              "lastUpdate": {
+                "__datatype__": "timestamp",
+                "value": {
+                  "_seconds": 1618467265,
+                  "_nanoseconds": 834000000
+                }
+              },
+              "uid": "91d83510-9db1-11eb-90b0-e16ef8d5e3d5",
+              "validUntil": null,
+              "keyName": [
+                "y",
+                "yo",
+                "you",
+                "yout",
+                "youtu",
+                "youtub",
+                "youtube"
+              ],
+              "photoURL": "https://youtube.com/favicon.ico",
+              "category": "websites",
+              "email": null,
+              "keySite": [
+                "y",
+                "yo",
+                "you",
+                "yout",
+                "youtu",
+                "youtub",
+                "youtube",
+                "youtube.",
+                "youtube.c",
+                "youtube.co",
+                "youtube.com"
+              ],
+              "address": null,
+              "displayName": "YouTube",
+              "rating": {
+                "totalRating": 4,
+                "numOfReviews": 4
+              },
+              "siteURL": "https://youtube.com",
+              "phone": null,
+              "keyTranslit": [
+                "y",
+                "yo",
+                "you",
+                "yout",
+                "youtu",
+                "youtub",
+                "youtube"
+              ],
+              "__collections__": {}
+            },
+            "f0fa4d80-9db1-11eb-90b0-e16ef8d5e3d5": {
+              "rating": {
+                "totalRating": 3,
+                "numOfReviews": 1
+              },
+              "siteURL": "https://comfy.ua",
+              "keySite": [
+                "c",
+                "co",
+                "com",
+                "comf",
+                "comfy",
+                "comfy.",
+                "comfy.u",
+                "comfy.ua"
+              ],
+              "keyName": [
+                "c",
+                "co",
+                "com",
+                "comf",
+                "comfy"
+              ],
+              "email": null,
+              "photoURL": "https://comfy.ua/favicon.ico",
+              "keyTranslit": [
+                "c",
+                "co",
+                "com",
+                "comf",
+                "comfy"
+              ],
+              "validUntil": null,
+              "category": "online_stores",
+              "uid": "f0fa4d80-9db1-11eb-90b0-e16ef8d5e3d5",
+              "address": null,
+              "displayName": "Comfy",
+              "phone": null,
+              "lastUpdate": {
+                "__datatype__": "timestamp",
+                "value": {
+                  "_seconds": 1618467314,
+                  "_nanoseconds": 850000000
+                }
+              },
+              "__collections__": {}
+            }
+          }
+        }
+      }
+    },
+    "reviews": {
+      "11636c00-9db2-11eb-90b0-e16ef8d5e3d5": {
+        "__collections__": {
+          "clients": {
+            "11904860-9db2-11eb-90b0-e16ef8d5e3d5": {
+              "message": "qergerg",
+              "uidOwner": "zCZm32uzB6bl0ufPDSt3Rd1jLR23",
+              "uid": "11904860-9db2-11eb-90b0-e16ef8d5e3d5",
+              "creationTime": {
+                "__datatype__": "timestamp",
+                "value": {
+                  "_seconds": 1618467368,
+                  "_nanoseconds": 934660000
+                }
+              },
+              "subRev": [],
+              "uidLastUser": null,
+              "likes": [],
+              "rating": 3,
+              "displayName": "Gleb's notes",
+              "__collections__": {}
+            },
+            "1ed66a40-9db2-11eb-90b0-e16ef8d5e3d5": {
+              "uidLastUser": null,
+              "uidOwner": "zCZm32uzB6bl0ufPDSt3Rd1jLR23",
+              "likes": [],
+              "uid": "1ed66a40-9db2-11eb-90b0-e16ef8d5e3d5",
+              "subRev": [],
+              "rating": 4,
+              "creationTime": {
+                "__datatype__": "timestamp",
+                "value": {
+                  "_seconds": 1618467391,
+                  "_nanoseconds": 210223000
+                }
+              },
+              "displayName": "Gleb's notes",
+              "message": "wrthrtwhrth",
+              "__collections__": {}
+            },
+            "21f117c0-9db2-11eb-90b0-e16ef8d5e3d5": {
+              "displayName": "Gleb's notes",
+              "uidLastUser": null,
+              "creationTime": {
+                "__datatype__": "timestamp",
+                "value": {
+                  "_seconds": 1618467396,
+                  "_nanoseconds": 418144000
+                }
+              },
+              "uid": "21f117c0-9db2-11eb-90b0-e16ef8d5e3d5",
+              "message": "wrht",
+              "likes": [],
+              "uidOwner": "zCZm32uzB6bl0ufPDSt3Rd1jLR23",
+              "subRev": [],
+              "rating": 3,
+              "__collections__": {}
+            }
+          }
+        }
+      },
+      "2113c200-9db0-11eb-90b0-e16ef8d5e3d5": {
+        "__collections__": {
+          "clients": {
+            "061517f0-9db1-11eb-90b0-e16ef8d5e3d5": {
+              "subRev": [],
+              "uidOwner": "zCZm32uzB6bl0ufPDSt3Rd1jLR23",
+              "displayName": "Gleb's notes",
+              "uid": "061517f0-9db1-11eb-90b0-e16ef8d5e3d5",
+              "uidLastUser": null,
+              "likes": [],
+              "creationTime": {
+                "__datatype__": "timestamp",
+                "value": {
+                  "_seconds": 1618466920,
+                  "_nanoseconds": 181001000
+                }
+              },
+              "rating": 4,
+              "message": "te yjtw yjte j jet jtej",
+              "__collections__": {}
+            },
+            "213a83e0-9db0-11eb-90b0-e16ef8d5e3d5": {
+              "displayName": "Gleb's notes",
+              "subRev": [
+                {
+                  "displayName": "Gleb's notes",
+                  "massage": "Отдых в оздоровительном комплексе \"Санта Мария\" впечатлил, большой опыт отдыха заграницей , но этот отель -это качество, уют, атмосфера , чистота и простор. Очень красивые панорамные виды, особенно в ресторане приятно кушать и смотреть вдаль на эту красоту в любую погоду. Бассейн индивидуально для к",
+                  "uid": "27dad5b0-9db0-11eb-90b0-e16ef8d5e3d5"
+                },
+                {
+                  "massage": "egmjetjetyjyyt",
+                  "uid": "342d48c0-9db0-11eb-a60d-65277ac2c9ca",
+                  "displayName": "Hostess QR"
+                },
+                {
+                  "displayName": "Gleb's notes",
+                  "uid": "37191e10-9db0-11eb-90b0-e16ef8d5e3d5",
+                  "massage": "tejtejtwyjwyj rwnjrtwjrtj rwt jrt jwrt"
+                },
+                {
+                  "uid": "3947e4f0-9db0-11eb-a60d-65277ac2c9ca",
+                  "displayName": "Hostess QR",
+                  "massage": "wrt jrtw jrtj rtjrwj rwtj rt jrwj j"
+                },
+                {
+                  "displayName": "Gleb's notes",
+                  "uid": "3b5cbb30-9db0-11eb-90b0-e16ef8d5e3d5",
+                  "massage": "wth wrh trwhrt hrtwh rtw hrtw hrw"
+                },
+                {
+                  "massage": "rwt hr hrw hrt hrwhrthrt hwr hrth rtht hrw",
+                  "uid": "3dcb9850-9db0-11eb-a60d-65277ac2c9ca",
+                  "displayName": "Hostess QR"
+                },
+                {
+                  "massage": "rw hrw hrwt hrhtrjuh h rtwh rth rh",
+                  "displayName": "Gleb's notes",
+                  "uid": "3fcff3d0-9db0-11eb-90b0-e16ef8d5e3d5"
+                }
+              ],
+              "uidLastUser": "zCZm32uzB6bl0ufPDSt3Rd1jLR23",
+              "creationTime": {
+                "__datatype__": "timestamp",
+                "value": {
+                  "_seconds": 1618466536,
+                  "_nanoseconds": 224294000
+                }
+              },
+              "uid": "213a83e0-9db0-11eb-90b0-e16ef8d5e3d5",
+              "rating": 5,
+              "message": "Отдых в оздоровительном комплексе \"Санта Мария\" впечатлил, большой опыт отдыха заграницей , но этот отель -это качество, уют, атмосфера , чистота и простор. Очень красивые панорамные виды, особенно в ресторане приятно кушать и смотреть вдаль на эту красоту в любую погоду. Бассейн индивидуально для каждого по записи это очень удобно.",
+              "uidOwner": "zCZm32uzB6bl0ufPDSt3Rd1jLR23",
+              "likes": [],
+              "__collections__": {}
+            },
+            "836d10a0-9db0-11eb-a60d-65277ac2c9ca": {
+              "uid": "836d10a0-9db0-11eb-a60d-65277ac2c9ca",
+              "subRev": [
+                {
+                  "uid": "8f792be0-9db0-11eb-90b0-e16ef8d5e3d5",
+                  "displayName": "Gleb's notes",
+                  "massage": "wrhwrhwrthrwthrwhrwthrwthrwthrthwrhrtwhwrthrtwhrwhrtht"
+                },
+                {
+                  "uid": "99157fa0-9db0-11eb-a60d-65277ac2c9ca",
+                  "massage": "wrthrwthrwth wrt hrth rwh rtwh rtwh rtw hrtw hrhrtwh",
+                  "displayName": "Hostess QR"
+                },
+                {
+                  "displayName": "Gleb's notes",
+                  "massage": "wrh rhrth rt hr hrwt hrhwhtrhrt rh t",
+                  "uid": "9e993de0-9db0-11eb-90b0-e16ef8d5e3d5"
+                },
+                {
+                  "massage": "wrth rtwhrtw h rt hrt hrw hr h hth w",
+                  "uid": "9f0f7f50-9db0-11eb-a60d-65277ac2c9ca",
+                  "displayName": "Hostess QR"
+                },
+                {
+                  "uid": "a3fa8000-9db0-11eb-90b0-e16ef8d5e3d5",
+                  "displayName": "Gleb's notes",
+                  "massage": "wrh rwh rwh"
+                },
+                {
+                  "uid": "a44a9bd0-9db0-11eb-a60d-65277ac2c9ca",
+                  "displayName": "Hostess QR",
+                  "massage": "rwt hrt hrtw hrt h rrhw"
+                }
+              ],
+              "displayName": "Hostess QR",
+              "uidLastUser": "H3TRJqSg9Kdal5UdE8MueN3gV4L2",
+              "likes": [],
+              "rating": 1,
+              "message": "This **** company ****ed up my money",
+              "creationTime": {
+                "__datatype__": "timestamp",
+                "value": {
+                  "_seconds": 1618466700,
+                  "_nanoseconds": 977335000
+                }
+              },
+              "uidOwner": "H3TRJqSg9Kdal5UdE8MueN3gV4L2",
+              "__collections__": {}
+            },
+            "c0fec8a0-9db0-11eb-90b0-e16ef8d5e3d5": {
+              "uidLastUser": null,
+              "displayName": "Gleb's notes",
+              "uid": "c0fec8a0-9db0-11eb-90b0-e16ef8d5e3d5",
+              "subRev": [],
+              "creationTime": {
+                "__datatype__": "timestamp",
+                "value": {
+                  "_seconds": 1618466804,
+                  "_nanoseconds": 273205000
+                }
+              },
+              "uidOwner": "zCZm32uzB6bl0ufPDSt3Rd1jLR23",
+              "likes": [],
+              "message": "dfnb gf nfgn gfn gfn",
+              "rating": 4,
+              "__collections__": {}
+            },
+            "cdab69a0-9db0-11eb-90b0-e16ef8d5e3d5": {
+              "uid": "cdab69a0-9db0-11eb-90b0-e16ef8d5e3d5",
+              "subRev": [],
+              "displayName": "Gleb's notes",
+              "message": "wrth th rwth rth t",
+              "rating": 2,
+              "uidOwner": "zCZm32uzB6bl0ufPDSt3Rd1jLR23",
+              "likes": [],
+              "uidLastUser": null,
+              "creationTime": {
+                "__datatype__": "timestamp",
+                "value": {
+                  "_seconds": 1618466825,
+                  "_nanoseconds": 536055000
+                }
+              },
+              "__collections__": {}
+            },
+            "e6649b10-9db0-11eb-90b0-e16ef8d5e3d5": {
+              "likes": [],
+              "uidLastUser": null,
+              "creationTime": {
+                "__datatype__": "timestamp",
+                "value": {
+                  "_seconds": 1618466867,
+                  "_nanoseconds": 17484000
+                }
+              },
+              "message": "etj yj teyjty jt tej tej tjty etj yj",
+              "uidOwner": "zCZm32uzB6bl0ufPDSt3Rd1jLR23",
+              "displayName": "Gleb's notes",
+              "subRev": [],
+              "uid": "e6649b10-9db0-11eb-90b0-e16ef8d5e3d5",
+              "rating": 3,
+              "__collections__": {}
+            },
+            "f9420330-9db0-11eb-90b0-e16ef8d5e3d5": {
+              "likes": [],
+              "uidLastUser": null,
+              "displayName": "Gleb's notes",
+              "creationTime": {
+                "__datatype__": "timestamp",
+                "value": {
+                  "_seconds": 1618466898,
+                  "_nanoseconds": 667141000
+                }
+              },
+              "message": "e tj yte yjtey jty jtej ty jtejyjetyj teyjet",
+              "uid": "f9420330-9db0-11eb-90b0-e16ef8d5e3d5",
+              "subRev": [],
+              "uidOwner": "zCZm32uzB6bl0ufPDSt3Rd1jLR23",
+              "rating": 5,
+              "__collections__": {}
+            }
+          }
+        }
+      },
+      "4d53c580-9db1-11eb-90b0-e16ef8d5e3d5": {
+        "__collections__": {
+          "clients": {
+            "4d711180-9db1-11eb-90b0-e16ef8d5e3d5": {
+              "creationTime": {
+                "__datatype__": "timestamp",
+                "value": {
+                  "_seconds": 1618467039,
+                  "_nanoseconds": 896793000
+                }
+              },
+              "displayName": "Gleb's notes",
+              "uidOwner": "zCZm32uzB6bl0ufPDSt3Rd1jLR23",
+              "uidLastUser": null,
+              "subRev": [],
+              "likes": [],
+              "uid": "4d711180-9db1-11eb-90b0-e16ef8d5e3d5",
+              "rating": 5,
+              "message": "rthrtwh",
+              "__collections__": {}
+            },
+            "546a31b0-9db1-11eb-90b0-e16ef8d5e3d5": {
+              "displayName": "Gleb's notes",
+              "rating": 5,
+              "uidOwner": "zCZm32uzB6bl0ufPDSt3Rd1jLR23",
+              "uidLastUser": null,
+              "likes": [],
+              "uid": "546a31b0-9db1-11eb-90b0-e16ef8d5e3d5",
+              "creationTime": {
+                "__datatype__": "timestamp",
+                "value": {
+                  "_seconds": 1618467051,
+                  "_nanoseconds": 602703000
+                }
+              },
+              "message": "wrhwrhtwh",
+              "subRev": [],
+              "__collections__": {}
+            },
+            "57272ed0-9db1-11eb-90b0-e16ef8d5e3d5": {
+              "displayName": "Gleb's notes",
+              "uidOwner": "zCZm32uzB6bl0ufPDSt3Rd1jLR23",
+              "likes": [],
+              "uid": "57272ed0-9db1-11eb-90b0-e16ef8d5e3d5",
+              "rating": 5,
+              "subRev": [],
+              "uidLastUser": null,
+              "creationTime": {
+                "__datatype__": "timestamp",
+                "value": {
+                  "_seconds": 1618467056,
+                  "_nanoseconds": 200500000
+                }
+              },
+              "message": "wrthewhwr",
+              "__collections__": {}
+            }
+          }
+        }
+      },
+      "5f697b60-9db2-11eb-90b0-e16ef8d5e3d5": {
+        "__collections__": {
+          "clients": {
+            "5f86ee70-9db2-11eb-90b0-e16ef8d5e3d5": {
+              "rating": 2,
+              "message": "ryukryuk",
+              "uid": "5f86ee70-9db2-11eb-90b0-e16ef8d5e3d5",
+              "likes": [],
+              "subRev": [],
+              "displayName": "Gleb's notes",
+              "creationTime": {
+                "__datatype__": "timestamp",
+                "value": {
+                  "_seconds": 1618467499,
+                  "_nanoseconds": 735879000
+                }
+              },
+              "uidOwner": "zCZm32uzB6bl0ufPDSt3Rd1jLR23",
+              "uidLastUser": null,
+              "__collections__": {}
+            },
+            "6d0c8a50-9db2-11eb-90b0-e16ef8d5e3d5": {
+              "uid": "6d0c8a50-9db2-11eb-90b0-e16ef8d5e3d5",
+              "uidLastUser": null,
+              "likes": [],
+              "subRev": [],
+              "uidOwner": "zCZm32uzB6bl0ufPDSt3Rd1jLR23",
+              "displayName": "Gleb's notes",
+              "message": "srthwrthwrth",
+              "rating": 1,
+              "creationTime": {
+                "__datatype__": "timestamp",
+                "value": {
+                  "_seconds": 1618467522,
+                  "_nanoseconds": 437460000
+                }
+              },
+              "__collections__": {}
+            },
+            "71045160-9db2-11eb-90b0-e16ef8d5e3d5": {
+              "displayName": "Gleb's notes",
+              "message": "wrthtrwh",
+              "uidLastUser": null,
+              "likes": [],
+              "uid": "71045160-9db2-11eb-90b0-e16ef8d5e3d5",
+              "subRev": [],
+              "creationTime": {
+                "__datatype__": "timestamp",
+                "value": {
+                  "_seconds": 1618467529,
+                  "_nanoseconds": 84334000
+                }
+              },
+              "uidOwner": "zCZm32uzB6bl0ufPDSt3Rd1jLR23",
+              "rating": 2,
+              "__collections__": {}
+            }
+          }
+        }
+      },
+      "91d83510-9db1-11eb-90b0-e16ef8d5e3d5": {
+        "__collections__": {
+          "clients": {
+            "91f029e0-9db1-11eb-90b0-e16ef8d5e3d5": {
+              "uidLastUser": null,
+              "rating": 1,
+              "uid": "91f029e0-9db1-11eb-90b0-e16ef8d5e3d5",
+              "displayName": "Gleb's notes",
+              "subRev": [],
+              "uidOwner": "zCZm32uzB6bl0ufPDSt3Rd1jLR23",
+              "likes": [],
+              "creationTime": {
+                "__datatype__": "timestamp",
+                "value": {
+                  "_seconds": 1618467154,
+                  "_nanoseconds": 814986000
+                }
+              },
+              "message": "bdfbdfbdfbdf",
+              "__collections__": {}
+            },
+            "b26ea520-9db1-11eb-90b0-e16ef8d5e3d5": {
+              "uidOwner": "zCZm32uzB6bl0ufPDSt3Rd1jLR23",
+              "creationTime": {
+                "__datatype__": "timestamp",
+                "value": {
+                  "_seconds": 1618467209,
+                  "_nanoseconds": 336858000
+                }
+              },
+              "displayName": "Gleb's notes",
+              "likes": [],
+              "subRev": [],
+              "uid": "b26ea520-9db1-11eb-90b0-e16ef8d5e3d5",
+              "rating": 1,
+              "uidLastUser": null,
+              "message": "trjtyjetj",
+              "__collections__": {}
+            },
+            "b7676170-9db1-11eb-90b0-e16ef8d5e3d5": {
+              "uidLastUser": null,
+              "likes": [],
+              "subRev": [],
+              "creationTime": {
+                "__datatype__": "timestamp",
+                "value": {
+                  "_seconds": 1618467217,
+                  "_nanoseconds": 677490000
+                }
+              },
+              "rating": 1,
+              "message": "etyjetyjteyj",
+              "displayName": "Gleb's notes",
+              "uid": "b7676170-9db1-11eb-90b0-e16ef8d5e3d5",
+              "uidOwner": "zCZm32uzB6bl0ufPDSt3Rd1jLR23",
+              "__collections__": {}
+            },
+            "d3e58a20-9db1-11eb-90b0-e16ef8d5e3d5": {
+              "displayName": "Gleb's notes",
+              "subRev": [],
+              "uid": "d3e58a20-9db1-11eb-90b0-e16ef8d5e3d5",
+              "creationTime": {
+                "__datatype__": "timestamp",
+                "value": {
+                  "_seconds": 1618467265,
+                  "_nanoseconds": 481623000
+                }
+              },
+              "rating": 1,
+              "message": "wrthrwhrth",
+              "uidOwner": "zCZm32uzB6bl0ufPDSt3Rd1jLR23",
+              "likes": [],
+              "uidLastUser": null,
+              "__collections__": {}
+            }
+          }
+        }
+      },
+      "f0fa4d80-9db1-11eb-90b0-e16ef8d5e3d5": {
+        "__collections__": {
+          "clients": {
+            "f116d630-9db1-11eb-90b0-e16ef8d5e3d5": {
+              "subRev": [],
+              "uid": "f116d630-9db1-11eb-90b0-e16ef8d5e3d5",
+              "uidOwner": "zCZm32uzB6bl0ufPDSt3Rd1jLR23",
+              "likes": [],
+              "displayName": "Gleb's notes",
+              "rating": 3,
+              "message": "qerg",
+              "creationTime": {
+                "__datatype__": "timestamp",
+                "value": {
+                  "_seconds": 1618467314,
+                  "_nanoseconds": 451873000
+                }
+              },
+              "uidLastUser": null,
+              "__collections__": {}
+            }
+          }
+        }
+      }
+    },
+    "users": {
+      "H3TRJqSg9Kdal5UdE8MueN3gV4L2": {
+        "email": "hostessqr@gmail.com",
+        "creationTime": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1618466328,
+            "_nanoseconds": 745000000
+          }
+        },
+        "displayName": "Hostess QR",
+        "isAdmin": false,
+        "limits": {
+          "supportLimit": null,
+          "reviewsLimit": {},
+          "addCompLimit": null
+        },
+        "uid": "H3TRJqSg9Kdal5UdE8MueN3gV4L2",
+        "discounts": [],
+        "notification": [],
+        "favourite": [],
+        "__collections__": {}
+      },
+      "zCZm32uzB6bl0ufPDSt3Rd1jLR23": {
+        "favourite": [
+          "11636c00-9db2-11eb-90b0-e16ef8d5e3d5",
+          "91d83510-9db1-11eb-90b0-e16ef8d5e3d5"
+        ],
+        "discounts": [],
+        "creationTime": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1618465860,
+            "_nanoseconds": 447000000
+          }
+        },
+        "limits": {
+          "addCompLimit": null,
+          "reviewsLimit": {
+            "5f697b60-9db2-11eb-90b0-e16ef8d5e3d5": {
+              "__datatype__": "timestamp",
+              "value": {
+                "_seconds": 1618899528,
+                "_nanoseconds": 736844000
+              }
+            }
+          },
+          "supportLimit": null
+        },
+        "notification": [],
+        "uid": "zCZm32uzB6bl0ufPDSt3Rd1jLR23",
+        "displayName": "Gleb's notes",
+        "email": "glebon0202@gmail.com",
+        "isAdmin": false,
+        "__collections__": {}
+      }
+    }
+  }
+}
