@@ -1,0 +1,149 @@
+{
+  "__collections__": {
+    "countries": {
+      "FJ": {
+        "__collections__": {
+          "companies": {
+            "b2a04df3-97dd-47bb-bb40-d4429fa97b7b": {
+              "uid": "b2a04df3-97dd-47bb-bb40-d4429fa97b7b",
+              "displayName": "Telecom Fiji",
+              "photoURL": "http://www.google.com/s2/favicons?sz=32&domain=tfl.com.fj",
+              "category": "internet_service_providers",
+              "siteURL": "tfl.com.fj",
+              "phone": null,
+              "address": null,
+              "email": null,
+              "rating": {
+                "totalRating": null,
+                "numOfReviews": null
+              },
+              "validUntil": null,
+              "lastUpdate": null,
+              "keyName": [
+                "t",
+                "te",
+                "tel",
+                "tele",
+                "telec",
+                "teleco",
+                "telecom",
+                "telecom ",
+                "telecom f",
+                "telecom fi",
+                "telecom fij",
+                "telecom fiji"
+              ],
+              "keySite": [
+                "t",
+                "tf",
+                "tfl",
+                "tfl.",
+                "tfl.c",
+                "tfl.co",
+                "tfl.com",
+                "tfl.com.",
+                "tfl.com.f",
+                "tfl.com.fj"
+              ],
+              "keyTranslit": [
+                "т",
+                "те",
+                "тел",
+                "теле",
+                "телец",
+                "телецо",
+                "телецом",
+                "телецом ",
+                "телецом ф",
+                "телецом фи",
+                "телецом фиj",
+                "телецом фиjи"
+              ]
+            },
+            "ec4e3b84-e05d-4e70-a406-5cae8167bd01": {
+              "uid": "ec4e3b84-e05d-4e70-a406-5cae8167bd01",
+              "displayName": "iTaukei Land Trust Board",
+              "photoURL": "http://www.google.com/s2/favicons?sz=32&domain=tltb.com.fj",
+              "category": "accounting_services",
+              "siteURL": "tltb.com.fj",
+              "phone": null,
+              "address": null,
+              "email": null,
+              "rating": {
+                "totalRating": null,
+                "numOfReviews": null
+              },
+              "validUntil": null,
+              "lastUpdate": null,
+              "keyName": [
+                "i",
+                "it",
+                "ita",
+                "itau",
+                "itauk",
+                "itauke",
+                "itaukei",
+                "itaukei ",
+                "itaukei l",
+                "itaukei la",
+                "itaukei lan",
+                "itaukei land",
+                "itaukei land ",
+                "itaukei land t",
+                "itaukei land tr",
+                "itaukei land tru",
+                "itaukei land trus",
+                "itaukei land trust",
+                "itaukei land trust ",
+                "itaukei land trust b",
+                "itaukei land trust bo",
+                "itaukei land trust boa",
+                "itaukei land trust boar",
+                "itaukei land trust board"
+              ],
+              "keySite": [
+                "t",
+                "tl",
+                "tlt",
+                "tltb",
+                "tltb.",
+                "tltb.c",
+                "tltb.co",
+                "tltb.com",
+                "tltb.com.",
+                "tltb.com.f",
+                "tltb.com.fj"
+              ],
+              "keyTranslit": [
+                "и",
+                "ит",
+                "ита",
+                "итан",
+                "итанк",
+                "итанке",
+                "итанкеи",
+                "итанкеи ",
+                "итанкеи л",
+                "итанкеи ла",
+                "итанкеи лан",
+                "итанкеи ланд",
+                "итанкеи ланд ",
+                "итанкеи ланд т",
+                "итанкеи ланд тр",
+                "итанкеи ланд трн",
+                "итанкеи ланд трнс",
+                "итанкеи ланд трнст",
+                "итанкеи ланд трнст ",
+                "итанкеи ланд трнст б",
+                "итанкеи ланд трнст бо",
+                "итанкеи ланд трнст боа",
+                "итанкеи ланд трнст боар",
+                "итанкеи ланд трнст боард"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
