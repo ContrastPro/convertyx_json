@@ -177,6 +177,9 @@ class SingleExcelFileReviewsImport {
     String countryCode,
     TimeLogger timeLogger,
   }) async {
+    // мОЖНО ПРОВЕРИТЬ ЕСЛИ _reviewsMap НЕ ПУСТАЯ ИЛИ ЧТО-ТО ТОГО
+    // СНАЧАЛО ДОБАВИТЬ _addToOutputMap А ПОТОМ ФИНАЛЬНАЯ ЗАПИСЬ
+
     if (_outputCompany.isNotEmpty) {
       final File importFileCompanies = File(
         'bin/script/reviews/output/import-company-$countryCode.json',
